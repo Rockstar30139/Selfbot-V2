@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**
 """)
 
 @ok.command()
@@ -218,6 +218,80 @@ async def hack2(ctx, member:discord.User = None):
 The **scary** and dangerous hack is complete""")
     await asyncio.sleep(2)
 
+@ok.command(aliases=["jerkoff", "ejaculate", "orgasm"])
+async def cum(ctx):
+    await ctx.message.delete()
+    message = await ctx.send('''
+            :ok_hand:            :smile:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8=:punch:=D 
+             :trumpet:      :eggplant:''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                      :ok_hand:            :smiley:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8==:punch:D 
+             :trumpet:      :eggplant:  
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                      :ok_hand:            :grimacing:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8=:punch:=D 
+             :trumpet:      :eggplant:  
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                      :ok_hand:            :persevere:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8==:punch:D 
+             :trumpet:      :eggplant:   
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                      :ok_hand:            :confounded:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8=:punch:=D 
+             :trumpet:      :eggplant: 
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                       :ok_hand:            :tired_face:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8==:punch:D 
+             :trumpet:      :eggplant:    
+             ''')
+    await asyncio.sleep(0.5)
+    await message.edit(contnet='''
+                       :ok_hand:            :weary:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8=:punch:= D:sweat_drops:
+             :trumpet:      :eggplant:        
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                       :ok_hand:            :dizzy_face:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8==:punch:D :sweat_drops:
+             :trumpet:      :eggplant:                 :sweat_drops:
+     ''')
+    await asyncio.sleep(0.5)
+    await message.edit(content='''
+                       :ok_hand:            :drooling_face:
+   :eggplant: :zzz: :necktie: :eggplant: 
+                   :oil:     :nose:
+                 :zap: 8==:punch:D :sweat_drops:
+             :trumpet:      :eggplant:                 :sweat_drops:
+     ''')
+       
 @ok.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '194151340090327041':
