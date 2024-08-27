@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**
 """)
 
 @ok.command()
@@ -167,6 +167,56 @@ async def getbal(ctx, ltcaddress):
     message += f"`-` **TOTAL LTC RECEIVED** : `{usd_total_balance:.2f}$ USD`\n"
     message += f"`-` **UNCONFIRMED LTC** : `{usd_unconfirmed_balance:.2f}$ USD`\n\n"
 
+
+@ok.command()
+async def rockstarop(ctx):
+    await ctx.message.delete()
+    await ctx.send(""" ```ROCKSTAR ON TOP``` """)
+
+@ok.command()
+async def hack2(ctx, member:discord.User = None):
+    message = await ctx.send(f"Hacking {member.name} now...")
+    await asyncio.sleep(1)
+
+    await message.edit(content= f"Finding discord login...(2fa bypassed)")
+    await asyncio.sleep(2)
+    
+    await message.edit(content=f"Fetching dms with closest friends (if you got any init)")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Finding most common Word...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Injecting virus into the discriminator #{member.discriminator}")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Virus injected. Nitro stolen")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Setting up Nintendo account...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Hacking Nintendo account...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Finding IP address...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"**IP Address**: 127.0.0.1")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Stealing data from the scary Goverment...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Reporting account to discord for breaking TOS...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"Hacking your Google history...")
+    await asyncio.sleep(2)
+
+    await message.edit(content=f"""Finished hacking {member.name}
+The **scary** and dangerous hack is complete""")
+    await asyncio.sleep(2)
 
 @ok.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
