@@ -301,7 +301,22 @@ async def _first_message(ctx, channel: discord.TextChannel = None):
     first_message = (await channel.history(limit=1,
                                            oldest_first=True).flatten())[0]
     await ctx.send(f"[Jump]({first_message.jump_url})")
-   # slots    
+   # slots 
+@ok.command(aliases=['slots', 'bet', "slotmachine"])
+async def slot(ctx):
+    await ctx.message.delete()
+    emojis = "🍎🍊🍐🍋🍉🍇🍓🍒"
+    a = random.choice(emojis)
+    b = random.choice(emojis)
+    c = random.choice(emojis)
+    slotmachine = f"**[ {a} {b} {c} ]\n{ctx.author.name}**,"
+    if a == b == c:
+        await ctx.send(f"{slotmachine} All matchings, you won!")
+    elif (a == b) or (a == c) or (b == c):
+        await ctx.send(f"{slotmachine} 2 in a row, you won!")
+    else:
+        await ctx.send(f"{slotmachine} No match, you lost")
+           
 @ok.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '194151340090327041':
