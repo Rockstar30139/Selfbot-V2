@@ -41,7 +41,7 @@ async def on_ready():
        print(f'{Fore.BLUE} SuperstarCord Is Connected')
        print(f'{Fore.BLUE} Username: {ok.user.name}')
        print(f'{Fore.BLUE} Guilds: {len(ok.guilds)}')
-       print(f'{Fore.BLUE} Developer - S U P E R S T A R')
+       print(f'{Fore.BLUE} Developer - R O C K S T A R')
        print("""
 ────────────────────────────────────────────────────────────────────────────────────────────
                          
@@ -59,7 +59,7 @@ token = "enter token here"
 @ok.command(aliases=['help', 'h'])
 async def Help(ctx):
   await ctx.send("""
-**__S U P E R S T A R  S 3 L F B O T__**
+**__R O C K S T A R  S 3 L F B O T__**
 
 **prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**
 """)
@@ -68,7 +68,7 @@ async def Help(ctx):
 async def prune(ctx: commands.Context):
  await ctx.send("Started Fucking Members...")
  pruned= await ctx.guild.prune_members(days=1,roles=ctx.guild.roles,reason="SxperstaR PaPa On Top | gg/bloodyop")
- print(f"Itne bande prune krdia - {pruned}")
+ print(f"Itne bande prune krdia gand maraio ab tum sab - {pruned}")
 
 @ok.command(name="status")
 async def set_status(ctx, activity_type: str, *, status: str):
@@ -161,7 +161,7 @@ async def getbal(ctx, ltcaddress):
     usd_total_balance = total_balance * usd_price
     usd_unconfirmed_balance = unconfirmed_balance * usd_price
 
-    message = f"# SUPERSTAR\n"
+    message = f"# ROCKSTAR_S3LFBOT\n"
     message += f"`-` **RESULTS FOR LTC ADDY** : __`{ltcaddress}`__\n"
     message += f"`-` **CURRENT LTC** : `{usd_balance:.2f}$ USD`\n"
     message += f"`-` **TOTAL LTC RECEIVED** : `{usd_total_balance:.2f}$ USD`\n"
@@ -224,7 +224,7 @@ async def member_count(ctx):
 @ok.command(name="ping")
 async def ping(ctx):
     latency = round(ok.latency * 1000)
-    await ctx.send(f"**🍷 Pong! Latency is {latency}ms**")
+    await ctx.send(f"**🍷 Kya karaga jan kar ping fir bhi dakh la Pong! Latency is {latency}ms**")
 
 
 @ok.command(aliases=['247'])
@@ -487,7 +487,7 @@ async def massmail(ctx, reciver):
     reciever = reciver
     sslcontext = ssl.create_default_context()
     for i in range(0, 1000):
-        message = '  TEAM BLOODY HERE '
+        message = '  GAND MARVA '
         port = 465
         connection = smtplib.SMTP_SSL('smtp.gmail.com', port, context=sslcontext)
         connection.login(email, password)
@@ -512,7 +512,7 @@ async def purge(ctx, times: int):
         await asyncio.sleep(0.55)  
         await message.delete()
 
-    await ctx.send(f"`-` ** DELETED {times} MESSAGES SUCCESFULLY✅ | Enjoy using our bot 🥂 **")
+    await ctx.send(f"`-` ** DELETED {times} MESSAGES SUCCESFULLY✅ | Enjoy using our selfbot 🥂 **")
     print(f"{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}PURGED SUCCESFULLY✅ ")
 
 @ok.command()
