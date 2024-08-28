@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**
 """)
 
 @ok.command()
@@ -291,6 +291,38 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# SINGLE GUILD LEAVE
+@unknown.command(aliases=["leaveg","guildleave"])
+async def leaveguild(ctx, *, guild: discord.Guild = None):
+    #if ctx.author.id in is_bot_owner:
+    if guild is None:
+        print("Please enter the guild ID!")  # No guild found
+        return
+    await guild.leave()  # Guild found
+    await ctx.send(f"**I left: {guild.name}!**")
+# RANDOM IP
+@ok.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def randomip(ctx):
+    octets = [random.randint(0, 255) for forgesb in range(4)]
+    forgeip = ".".join(map(str, octets))
+    await ctx.reply(f"> **Random IP: {forgeip}**")
+# ALL GUILDS ID
+@ok.command()
+async def guildsid(ctx):
+    for guild in unknown.guilds:
+            await ctx.send(f"**{guild.name} | {guild.id}**")    
+# ALL GUILD LEAVE
+@ok.command(aliases=['la'])
+async def leaveall(ctx):
+ while True:
+  for guilds in unknown.guilds:
+   try:
+    await guilds.leave()
+    await ctx.send(f"left {guilds}")
+   except:
+       await ctx.send(f"couldnt leave {guilds}")
+          
 # Uptime
 @ok.command()
 async def uptime(ctx):
