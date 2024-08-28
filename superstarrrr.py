@@ -304,13 +304,13 @@ async def c2i(ctx, amount: str):
     await ctx.reply(f"- **[+]** ` AMOUNT IS` : __₹{usd_amount:.2f}/$__")
     print(f"{Fore.GREEN}[+] C2I DONE ✅ ")
 # ABUSE
-@unknown.command()
+@ok.command()
 async def abuse(ctx):
     message = 'bsdk randi hijarchodh teri mummy ki chut me loda mera teri mumm ki chut aisi marunga behen ke lode gnd chud jayegi teri bhosdike aukat se rahle madarjaat ke pille na to jhaant phadh chudai karunga behenchode rndwwa saala baap se bakchodi pel ra behen ka loda bhosdike teri mummy ki chut maru ghapa ghap ghapa ghap bhosda saala rndi panga na lelio phirse warna ptak ke codh dunga behenchode saale teri maa ka bhosda faad dunga phir wo royegi beth ke behen ki lodi saali chutadi saala chutiyapa karega behen ka loda lund lele baap ka behen ke lodechutadin aale rndwe pille bhosde teri mummy ki chut me loda daalu 10 baar teri mummy chodu 50 baar rndi ke pille aukat na ho to 121 karne ki jurat na ho jai bahin choda saala beta tumhara papa aniket 1021 karke betha hai tum jaiso ko loda chusvata hu behenchodo tumhari mummy ko lund pe jhulata hu saalo rndi ko pillo khandan chud jayega tumhara mujhse 121 karne me behene ke lode mujhse bhidenge'
     await ctx.send(message)
     await ctx.message.delete()
 # SINGLE GUILD LEAVE
-@unknown.command(aliases=["leaveg","guildleave"])
+@ok.command(aliases=["leaveg","guildleave"])
 async def leaveguild(ctx, *, guild: discord.Guild = None):
     #if ctx.author.id in is_bot_owner:
     if guild is None:
