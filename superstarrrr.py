@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**
 """)
 
 @ok.command()
@@ -353,7 +353,23 @@ async def _first_message(ctx, channel: discord.TextChannel = None):
     first_message = (await channel.history(limit=1,
                                            oldest_first=True).flatten())[0]
     await ctx.send(f"[Jump]({first_message.jump_url})")
-   # slots 
+  # sb info
+@ok.command(aliases=["Selfbot"])
+async def Selfbot(ctx):
+    lol = (
+        "**```yml\n"
+        "!    ROCKSTAR SELFBOT    !\n```"
+        "```js\n"
+        "- VERSION => SELFBOT V2\n"
+        "- LANG => PYTHON\n"
+        f"- REQUEST CREATOR => {unknown.user.name}\n"
+        "- NOTE => SOME COMMANDS ARE NON PREFIX & SOME REQUIRE PREFIX, IN FUTURE UPDATES THOSE COMMANDS WILL WORK WITHOUT PREFIX```"
+        "```yml\n"
+        "!    CREATED BY ROCKSTAR    !```**")
+    await ctx.message.delete()
+    await ctx.send(lol)
+       
+# slots 
 @ok.command(aliases=['slots', 'bet', "slotmachine"])
 async def slot(ctx):
     await ctx.message.delete()
