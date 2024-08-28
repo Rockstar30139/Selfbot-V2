@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**
 """)
 
 @ok.command()
@@ -291,6 +291,40 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# I2C
+@ok.command()
+@commands.cooldown(1, 3, commands.BucketType.user)
+async def i2c(ctx, amount: str):
+    amount = float(amount.replace('₹', ''))
+    inr_amount = amount * I2C_Rate
+    await ctx.reply(f"- **[+]** ` AMOUNT IS` : __₹{inr_amount:.2f}/$__")
+    print(f"{Fore.GREEN}[+] I2C DONE ✅ ")
+# Mine swipper
+@ok.command()
+async def minesweeper(ctx, size: int = 5):
+    await ctx.message.delete()
+    size = max(min(size, 8), 2)
+    bombs = [[random.randint(0, size - 1),
+              random.randint(0, size - 1)] for x in range(int(size - 1))]
+    is_on_board = lambda x, y: 0 <= x < size and 0 <= y < size
+    has_bomb = lambda x, y: [i for i in bombs if i[0] == x and i[1] == y]
+    message = "**Click to play**:\n"
+    for y in range(size):
+        for x in range(size):
+            tile = "||{}||".format(chr(11036))
+            if has_bomb(x, y):
+                tile = "||{}||".format(chr(128163))
+            else:
+                count = 0
+                for xmod, ymod in m_offets:
+                    if is_on_board(x + xmod, y + ymod) and has_bomb(
+                            x + xmod, y + ymod):
+                        count += 1
+                if count != 0:
+                    tile = "||{}||".format(m_numbers[count - 1])
+            message += tile
+        message += "\n"
+    await ctx.send(message)
 # check promo
 @unknown.command()
 async def checkpromo(ctx, *, promo_links):
