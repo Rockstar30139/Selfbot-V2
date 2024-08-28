@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**
 """)
 
 @ok.command()
@@ -291,6 +291,14 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# C2I
+@ok.command()
+@commands.cooldown(1, 3, commands.BucketType.user)
+async def c2i(ctx, amount: str):
+    amount = float(amount.replace('$', ''))
+    usd_amount = amount * C2I_Rate
+    await ctx.reply(f"- **[+]** ` AMOUNT IS` : __₹{usd_amount:.2f}/$__")
+    print(f"{Fore.GREEN}[+] C2I DONE ✅ ")
 # ABUSE
 @unknown.command()
 async def abuse(ctx):
