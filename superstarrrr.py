@@ -508,22 +508,6 @@ async def _first_message(ctx, channel: discord.TextChannel = None):
     first_message = (await channel.history(limit=1,
                                            oldest_first=True).flatten())[0]
     await ctx.send(f"[Jump]({first_message.jump_url})")
-  # sb info
-@ok.command(aliases=["Selfbot"])
-async def Selfbot(ctx):
-    lol = (
-        "**```yml\n"
-        "!    ROCKSTAR SELFBOT    !\n```"
-        "```js\n"
-        "- VERSION => SELFBOT V2\n"
-        "- LANG => PYTHON\n"
-        f"- REQUEST CREATOR => {unknown.user.name}\n"
-        "- NOTE => SOME COMMANDS ARE NON PREFIX & SOME REQUIRE PREFIX, IN FUTURE UPDATES THOSE COMMANDS WILL WORK WITHOUT PREFIX```"
-        "```yml\n"
-        "!    CREATED BY ROCKSTAR    !```**")
-    await ctx.message.delete()
-    await ctx.send(lol)
-       
 # slots 
 @ok.command(aliases=['slots', 'bet', "slotmachine"])
 async def slot(ctx):
