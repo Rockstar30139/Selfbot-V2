@@ -401,7 +401,7 @@ async def minesweeper(ctx, size: int = 5):
         message += "\n"
     await ctx.send(message)
 # check promo
-@unknown.command()
+@ok.command()
 async def checkpromo(ctx, *, promo_links):
     links = promo_links.split('\n')
 
