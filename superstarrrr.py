@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)
 """)
 
 @ok.command()
@@ -291,6 +291,52 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# check promo
+@unknown.command()
+async def checkpromo(ctx, *, promo_links):
+    links = promo_links.split('\n')
+
+    async with aiohttp.ClientSession() as session:
+        for link in links:
+            promo_code = extract_promo_code(link)
+            if promo_code:
+                result = await check_promo(session, promo_code)
+                await ctx.send(result)
+            else:
+                await ctx.send(f'- `INAVLID PROMO{link}`')
+
+from dateutil import parser
+
+async def check_promo(session, promo_code):
+    url = f'https://ptb.discord.com/api/v10/entitlements/gift-codes/{promo_code}'
+
+    async with session.get(url) as response:
+        if response.status in [200, 204, 201]:
+            data = await response.json()
+            if data["uses"] == data["max_uses"]:
+                return f'- `ALREADY CLAIMED {promo_code}`'
+            else:
+                try:
+                    now = datetime.datetime.utcnow()
+                    exp_at = data["expires_at"].split(".")[0]
+                    parsed = parser.parse(exp_at)
+                    days = abs((now - parsed).days)
+                    title = data["promotion"]["inbound_header_text"]
+                except Exception as e:
+                    print(e)
+                    exp_at = "- `FAILED TO FETCH`"
+                    days = ""
+                    title = "- `FAILED TO FETCH`"
+                return f'- `VALID {promo_code} | DAYS LEFT IN EXPIRATION {days} | EXPIRES AT {exp_at} | TITLE :{title}`'
+        elif response.status == 429:
+            return f'- `RATE LIMITED{response.headers["RETRY AFTER"]} SECONDS`'
+        else:
+            return f'- `INVALID : {promo_code}`'
+
+
+def extract_promo_code(promo_link):
+    promo_code = promo_link.split('/')[-1]
+    return promo_code
 # GitSearch
 @ok.command()
 async def gitsearch(ctx, repository_name: str):
