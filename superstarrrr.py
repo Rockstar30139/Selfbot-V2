@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**
 """)
 
 @ok.command()
@@ -291,6 +291,31 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# Uptime
+@ok.command()
+async def uptime(ctx):
+    await ctx.message.delete()
+    now = datetime.utcnow(
+    )  # Timestamp of when uptime function is run
+    delta = now - start_time
+    hours, remainder = divmod(int(delta.total_seconds()), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    days, hours = divmod(hours, 24)
+    if days:
+        time_format = "**{d}** days, **{h}** hours, **{m}** minutes, and **{s}** seconds."
+    else:
+        time_format = "**{h}** hours, **{m}** minutes, and **{s}** seconds."
+    uptime_stamp = time_format.format(d=days, h=hours, m=minutes, s=seconds)
+    await ctx.send(uptime_stamp)
+# Count
+@ok.command(aliases=["100"])
+async def _100(ctx):
+    await ctx.message.delete()
+    message = await ctx.send("Starting count to 100")
+    await asyncio.sleep(2)
+    for _next in range(100):
+        await message.edit(content=_next)
+        await asyncio.sleep(2)
 # I2C
 @ok.command()
 @commands.cooldown(1, 3, commands.BucketType.user)
