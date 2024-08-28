@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**
 """)
 
 @ok.command()
@@ -291,6 +291,58 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# GitSearch
+@ok.command()
+async def gitsearch(ctx, repository_name: str):
+    try:
+        # Search for repositories on GitHub
+        url = f"https://api.github.com/search/repositories?q={repository_name}"
+        response = requests.get(url)
+        data = response.json()
+
+        # Process the response and send repository information as a response
+        if "items" in data:
+            repositories = data["items"][:5]  # Limit the number of repositories to display
+            for repository in repositories:
+                repo_name = repository["full_name"]
+                repo_url = repository["html_url"]
+                await ctx.send(f"**Repository:** {repo_name}\n{repo_url}")
+        else:
+            await ctx.send("No repositories found.")
+    except Exception as e:
+        await ctx.send(f"An error occurred: {str(e)}")
+
+# AutoBuy
+@ok.command()
+async def autobuy(ctx):
+    await ctx.message.delete()
+    await ctx.send(f" **[+]・ `AUTOBUY LINK` :** {AUTOBUY}")
+
+# GirUser
+@ok.command()
+async def gituser(ctx, username: str):
+    api_url = f"https://api.github.com/users/{username}"
+    
+    response = requests.get(api_url)
+    
+    if response.status_code == 200:
+        user_data = response.json()
+        
+        message = f"**GitHub User Information**\n\n"
+        message += f"**Username:** {user_data['login']}\n"
+        message += f"**Name:** {user_data['name'] or 'Not specified'}\n"
+        message += f"**Bio:** {user_data['bio'] or 'Not specified'}\n"
+        message += f"**Followers:** {user_data['followers']}\n"
+        message += f"**Following:** {user_data['following']}\n"
+        message += f"**Public Repositories:** {user_data['public_repos']}\n"
+        message += f"**GitHub URL:** {user_data['html_url']}\n"
+        
+        await ctx.send(message)
+    elif response.status_code == 404:
+        await ctx.send("User not found.")
+    else:
+        await ctx.send("Failed to fetch user information.")
+
 # first message
 @ok.command(
     name='first-message', aliases=['firstmsg', 'fm', 'firstmessage'])
