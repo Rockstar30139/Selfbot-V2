@@ -552,6 +552,37 @@ async def minesweeper(ctx, size: int = 5):
             message += tile
         message += "\n"
     await ctx.send(message)
+# cuddle
+@ok.command()
+async def cuddle(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+    try:        
+        r = requests.get("https://nekos.life/api/v2/img/cuddle")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} CUDDLE {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_cuddle.gif"))
+
+        print(f"[+] CUDDLE SUCCESSFUL: {ctx.author} Cuddle {user}")
+    except Exception as e:
+        print(f"[-] Error during CUDDLE command: {e}")
+# meme
+@ok.command()
+async def meme(ctx):
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get("https://www.reddit.com/r/memes.json") as r:
+            memes = await r.json()
+            urll=memes['data']['children'][random.randint(0,25)]['data']['url']
+            await ctx.send(f"""
+{urll}            
+""")
 # check promo
 @ok.command()
 async def checkpromo(ctx, *, promo_links):
