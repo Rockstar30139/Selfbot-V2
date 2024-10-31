@@ -291,6 +291,158 @@ async def cum(ctx):
                  :zap: 8==:punch:D :sweat_drops:
              :trumpet:      :eggplant:                 :sweat_drops:
      ''')
+# Kiss
+@ok.command()
+async def kiss(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+
+    try:
+        r = requests.get("https://nekos.life/api/v2/img/kiss")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} KISSED {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_kiss.gif"))
+
+        print(f"[+] KISS SUCCESSFUL: {ctx.author} kissed {user}")
+    except Exception as e:
+        print(f"[-] Error during kiss command: {e}")
+# slap
+@ok.command()
+async def slap(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+
+    try:
+        r = requests.get("https://nekos.life/api/v2/img/slap")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} SLAPPED {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_Slap.gif"))
+
+        print(f"[+] SLAP SUCCESSFUL: {ctx.author} Slapped {user}")
+    except Exception as e:
+        print(f"[-] Error during Slap command: {e}")
+# Tickle
+@ok.command()
+async def tickle(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+
+    try:
+        r = requests.get("https://nekos.life/api/v2/img/tickle")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} TICKLE {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_Tickle.gif"))
+
+        print(f"[+] Tickle SUCCESSFUL: {ctx.author} TICKLED {user}")
+    except Exception as e:
+        print(f"[-] Error during Tickle command: {e}")    
+# Feed
+@ok.command()
+async def feed(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+
+    try:
+        r = requests.get("https://nekos.life/api/v2/img/feed")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} FEEDED {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_Feed.gif"))
+
+        print(f"[+] FEEDED SUCCESSFUL: {ctx.author} Feeded {user}")
+    except Exception as e:
+        print(f"[-] Error during Feed command: {e}")    
+# Pat
+@ok.command()
+async def pat(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+
+    try:        
+        r = requests.get("https://nekos.life/api/v2/img/pat")
+        res = r.json()
+ 
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} PAT {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_pat.gif"))
+
+        print(f"[+] PAT SUCCESSFUL: {ctx.author} Pat {user}")
+    except Exception as e:
+        print(f"[-] Error during PAT command: {e}")
+# Smug
+@ok.command()
+async def smug(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+
+    if user is None:
+        user = ctx.author
+    try:        
+        r = requests.get("https://nekos.life/api/v2/img/smug")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+       
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} SMUG {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_smug.gif"))
+
+        print(f"[+] SMUG SUCCESSFUL: {ctx.author} Smug {user}")
+    except Exception as e:
+        print(f"[-] Error during SMUG command: {e}")
+# Hug
+@ok.command()
+async def hug(ctx, user: discord.Member = None, *message):
+    await ctx.message.delete()
+    
+    if user is None:
+        user = ctx.author
+    try:        
+        r = requests.get("https://nekos.life/api/v2/img/hug")
+        res = r.json()
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(res['url']) as resp:
+                image = await resp.read()
+
+        with io.BytesIO(image) as file:
+            await ctx.send(f"{ctx.author.mention} HUG {user.mention} {(' '.join(message)) if message else ''}", file=discord.File(file, "astraa_hug.gif"))
+
+        print(f"[+] HUG SUCCESSFUL: {ctx.author} Hug {user}")
+    except Exception as e:
+        print(f"[-] Error during HUG command: {e}")
 # Link
 @ok.command()
 async def link(channel):
