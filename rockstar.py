@@ -64,11 +64,18 @@ ok.remove_command('help')
 token = "enter token here"
 @ok.command(aliases=['help', 'h'])
 async def Help(ctx):
-  await ctx.send("""
-**__R O C K S T A R  S 3 L F B O T__**
-
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**, **link**, **addar,lister,removear**, **setrotator,stoprotator**
-""")
+  await ctx.send("""**```yml
+ROCKSTAR SELFBOT V1.1 
+``````js
+[01] GENERAL HELP(general)
+[02] ANTINUKE HELP(antinuke)
+[03] FUN HELP(fun)
+[04] SHOP HELP(shop)
+[05] NUKE HELP(nuke)
+[06] MODERATION HELP(mod)
+[07] SUPPORT(support)
+``````yml
+!   ROCKSTAR SELFBOT    !```**""")
 
 @ok.command()
 async def prune(ctx: commands.Context):
