@@ -73,14 +73,8 @@ ROCKSTAR SELFBOT V1.1
 [04] SHOP HELP(shop)
 [05] NUKE HELP(nuke)
 [06] MODERATION HELP(mod)
-[07] SUPPORT(support)
 ``````yml
 !   ROCKSTAR SELFBOT    !```**""")
-
-@ok.command(name="support", aliases=["Support"])
-async def SUPPORT(ctx):
-       mess = ("""https://discord.gg/A3hdPqu9GY""")
-       await ctx.send(mess)
 
 @ok.command(name="general", aliases=["g"])
 async def GENERAL(ctx):
