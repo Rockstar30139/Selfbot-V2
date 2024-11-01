@@ -77,6 +77,16 @@ ROCKSTAR SELFBOT V1.1
 ``````yml
 !   ROCKSTAR SELFBOT    !```**""")
 
+@ok.command(aliases=['general', 'g'])
+async def GENERAL(ctx):
+       await ctx.send("""**```yml
+ROCKSTAR SELFBOT V1.1 
+``````js
+R O C K S T A R  S E L F B O T
+
+prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link``````yml
+!   ROCKSTAR SELFBOT    !```**"""
+
 @ok.command()
 async def prune(ctx: commands.Context):
  await ctx.send("Started Fucking Members...")
