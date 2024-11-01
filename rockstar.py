@@ -1175,11 +1175,14 @@ async def massmail(ctx, reciver):
 
 @ok.command(aliases=['fun', 'f'])
 async def Fun(ctx):
-  await ctx.send("""
-**__R O C K S T A R  S 3 L F B O T__**
+  await ctx.send("""**```yml
+ROCKSTAR SELFBOT V1.1 
+``````js
+R O C K S T A R  S E L F B O T
 
-**                        Fun cmds**
-kiss,slap,tickle,feed,pat,smug,hug,cuddle,waifu,meme""")
+          Fun cmds
+kiss,slap,tickle,feed,pat,smug,hug,cuddle,waifu,meme``````yml
+!   ROCKSTAR SELFBOT    !```**""")
 
 @ok.command(aliases=['purge, clear'])
 async def purge(ctx, times: int):
