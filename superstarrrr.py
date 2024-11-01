@@ -662,7 +662,7 @@ __**[PAYMENT MODES]**__
 
 
 __**[+]・Created by - ROCKSTAR **__
-**●▬▬▬▬▬▬▬▬๑۩✰۩๑▬▬▬▬▬▬▬▬●**"""
+**●▬▬▬▬▬▬▬▬๑۩✰۩๑▬▬▬▬▬▬▬▬●**""")
 
 # GitSearch
 @ok.command()
