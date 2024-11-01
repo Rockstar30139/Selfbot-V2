@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**, **link**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**, **link**, **addar**
 """)
 
 @ok.command()
@@ -169,7 +169,7 @@ async def getbal(ctx, ltcaddress):
 
 
 #TRIGGER
-@leakedsb.command()
+@ok.command()
 async def addar(ctx, *, trigger_and_response: str):
     # Split the trigger and response using a comma (",")
     trigger, response = map(str.strip, trigger_and_response.split(','))
