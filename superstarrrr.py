@@ -38,19 +38,25 @@ async def on_ready():
        print(f'{Fore.BLUE} Selfbot ID: {ok.user.id}')
        print('ㅤㅤㅤㅤㅤ')
        print('ㅤㅤㅤㅤㅤ')
-       print(f'{Fore.BLUE} SuperstarCord Is Connected')
+       print(f'{Fore.BLUE} RockstarCord Is Connected')
        print(f'{Fore.BLUE} Username: {ok.user.name}')
        print(f'{Fore.BLUE} Guilds: {len(ok.guilds)}')
        print(f'{Fore.BLUE} Developer - R O C K S T A R')
        print("""
 ────────────────────────────────────────────────────────────────────────────────────────────
-                         
-      ____                            _        ____          _ 
-      / ___| _   _ _ __   ___ _ __ ___| |_ __ _|  _ \   __  _/ |
-      \___ \| | | | '_ \ / _ \ '__/ __| __/ _` | |_) |  \ \/ / |
-       ___) | |_| | |_) |  __/ |  \__ \ || (_| |  _ <    >  <| |
-      |____/ \__,_| .__/ \___|_|  |___/\__\__,_|_| \_\  /_/\_\_|
-                  |_|                                           
+                  
+$$$$$$$\   $$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\ $$$$$$$$\  $$$$$$\  $$$$$$$\  
+$$  __$$\ $$  __$$\ $$  __$$\ $$ | $$  |$$  __$$\\__$$  __|$$  __$$\ $$  __$$\ 
+$$ |  $$ |$$ /  $$ |$$ /  \__|$$ |$$  / $$ /  \__|  $$ |   $$ /  $$ |$$ |  $$ |
+$$$$$$$  |$$ |  $$ |$$ |      $$$$$  /  \$$$$$$\    $$ |   $$$$$$$$ |$$$$$$$  |
+$$  __$$< $$ |  $$ |$$ |      $$  $$<    \____$$\   $$ |   $$  __$$ |$$  __$$< 
+$$ |  $$ |$$ |  $$ |$$ |  $$\ $$ |\$$\  $$\   $$ |  $$ |   $$ |  $$ |$$ |  $$ |
+$$ |  $$ | $$$$$$  |\$$$$$$  |$$ | \$$\ \$$$$$$  |  $$ |   $$ |  $$ |$$ |  $$ |
+\__|  \__| \______/  \______/ \__|  \__| \______/   \__|   \__|  \__|\__|  \__|
+                                                                               
+                                                                               
+
+                                                                                                                       
 ────────────────────────────────────────────────────────────────────────────────────────────     
    """)
 
@@ -67,7 +73,7 @@ async def Help(ctx):
 @ok.command()
 async def prune(ctx: commands.Context):
  await ctx.send("Started Fucking Members...")
- pruned= await ctx.guild.prune_members(days=1,roles=ctx.guild.roles,reason="SxperstaR PaPa On Top | gg/bloodyop")
+ pruned= await ctx.guild.prune_members(days=1,roles=ctx.guild.roles,reason="Rockstar PaPa On Top")
  print(f"Itne bande prune krdia gand maraio ab tum sab - {pruned}")
 
 @ok.command(name="status")
