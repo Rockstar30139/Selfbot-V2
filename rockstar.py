@@ -77,13 +77,13 @@ ROCKSTAR SELFBOT V1.1
 ``````yml
 !   ROCKSTAR SELFBOT    !```**""")
 
-@ok.command(name="support", aliases{["Support"])
+@ok.command(name="support", aliases=["Support"])
 async def SUPPORT(ctx):
        mess = ("""https://discord.gg/A3hdPqu9GY""")
     await ctx.send(mess)
 
-@ok.command(name="generalhelp", aliases=["gh"])
-async def general_help(ctx):
+@ok.command(name="general", aliases=["g"])
+async def GENERAL(ctx):
     mess = ("""**```yml
 ROCKSTAR SELFBOT V1.1 
 ``````js
