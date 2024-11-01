@@ -26,7 +26,7 @@ import io
 import webbrowser
 from bs4 import BeautifulSoup
 import datetime
-from pyfiglet import Figlet
+from pyfiglet import Figlet # if getting error in this line then remove this
 from discord import Member
 from datetime import datetime, timedelta
 
