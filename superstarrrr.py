@@ -61,7 +61,7 @@ async def Help(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
-**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**, **link**, **addar**, **StatusRotator**
+**prune**, **mc**, **ban**, **kick**, **mute**, **ping**, **calc**, **asci**, **mujra**, **dmall**, **leave**, **getbal**, **purge**, **avatar**, **define**, **boosts**, **massmail**, **connectvc**, **ltcprice**, **gayrate**, **loverate**, **userinfo**, **copyserver**, **change_hypesquad**, **serverinfo**, **spam**, **status**, **stopstatus**, **rockstarop**, **hack2**, **cum**, **fm (first message)**, **slots**, **autobuy**, **gituser**, **gitsearch**, **Selfbot**, **checkpromo (promo link)**, **i2c**, **minesweeper**, **uptime**, **_100**, **leaveall (Leave all guilds)**, **guildsid**, **randomip**, **leaveguild (Leaves a single guild)**, **abuse**, **c2i**, **link**, **addar,lister,removear**, **StatusRotator**
 """)
 
 @ok.command()
@@ -184,6 +184,33 @@ async def addar(ctx, *, trigger_and_response: str):
 
     await ctx.send(f'# __ROCKSTAR S3LFB0Ƭ__\n`-` **AUTO-RESPONSE ADDED BXBY.. !** **{trigger}** - **{response}**')
 
+
+@ok.command()
+async def removear(ctx, trigger: str):
+    with open('auto_responses.json', 'r') as file:
+        data = json.load(file)
+
+    if trigger in data:
+        del data[trigger]
+
+        with open('auto_responses.json', 'w') as file:
+            json.dump(data, file, indent=4)
+
+        await ctx.send(f'# __ROCKSTAR S3LFB0Ƭ__\n`-` **AUTO-RESPONSE REMOVED** **{trigger}**')
+    else:
+        await ctx.send(f'# __ROCKSTAR S3LFB0Ƭ__\n`-` **AUTO-RESPONSE NOT FOUND** **{trigger}**')
+        
+@ok.command()
+async def lister(ctx):
+    with open('auto_responses.json', 'r') as file:
+        data = json.load(file)
+    responses = '\n'.join([f'**{trigger}** - **{response}**' for trigger, response in data.items()])
+    await ctx.send(f'# ROCKSTAR S3LFB0Ƭ__\n`-` **AUTO_RESPONSE LIST** :\n{responses}')
+
+
+
+# STATUS ROTATOR
+ok.load_extension("status_rotator")
 
 @ok.command()
 async def rockstarop(ctx):
