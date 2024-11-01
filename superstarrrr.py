@@ -357,6 +357,21 @@ async def tickle(ctx, user: discord.Member = None, *message):
         print(f"[+] Tickle SUCCESSFUL: {ctx.author} TICKLED {user}")
     except Exception as e:
         print(f"[-] Error during Tickle command: {e}")    
+# Nsfw
+@ok.command(aliases=['fuck', 'fx', '18+', 'xxx', 'nsfw'])
+async def waifu(ctx):
+    try:
+        response = requests.get('https://api.waifu.pics/nsfw/waifu')
+        data = response.json()
+        if 'url' in data:
+            image_url = data['url']
+            await ctx.message.delete()
+            await ctx.send(image_url)
+        else:
+            await ctx.send('- `[+] ERROR FINDING ANIME GURLLL`')
+            print(f"{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}HENTAI  SUCCESSFUL✅ (THARKI💀)")
+    except Exception as e:
+        print('- `[+] ERROR FETCHING IT`', e)
 # Feed
 @ok.command()
 async def feed(ctx, user: discord.Member = None, *message):
