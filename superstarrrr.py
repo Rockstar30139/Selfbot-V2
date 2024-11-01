@@ -644,6 +644,26 @@ async def check_promo(session, promo_code):
 def extract_promo_code(promo_link):
     promo_code = promo_link.split('/')[-1]
     return promo_code
+
+ok.command(aliases=['payment','p'])
+async def P(ctx):
+    await ctx.send("""**╭・⌬・ROCKSTAR S3LFB0T **
+**●▬▬▬▬▬▬▬▬๑۩✰۩๑▬▬▬▬▬▬▬▬●**
+__**[PAYMENT MODES]**__
+
+**[+]・ `LTC` : `ltc1q5spazr653mazesun5uaeskrnkjnfqjcnnjcl2x`**
+**[+]・ `BTC` : https://media.discordapp.net/attachments/1229096979611652228/1301588635484819586/IMG_20241031_221820.jpg?ex=67250661&is=6723b4e1&hm=2fdb69d5ed233c205bca1cef04a1d716a1dcbe41989fa467d541a1dda33b20dc&
+**[+]・ `ETH` : https://media.discordapp.net/attachments/1229096979611652228/1301588879052243048/IMG_20241031_221849.jpg?ex=6725069b&is=6723b51b&hm=660abfcdfcf5d1615afb8aa4b6fe5208bc8208d96239d9904077ffa65ba5df54&
+**[+]・ `UPI` : `anmol392@fam`**
+**[+]・ `UPI QR CODE / SCANNER` : https://media.discordapp.net/attachments/1229096979611652228/1301589734275158037/share_image4224021627541357224.png?ex=67250767&is=6723b5e7&hm=a6aa5715c63b586a087d7e0db867cc96f6e6ccfad1779f6bb600d0bd906867ec&
+**[+]・ `BTC QR CODE / SCANNER` : https://media.discordapp.net/attachments/1229096979611652228/1301588635484819586/IMG_20241031_221820.jpg?ex=67250661&is=6723b4e1&hm=2fdb69d5ed233c205bca1cef04a1d716a1dcbe41989fa467d541a1dda33b20dc&
+**[+]・ `ETH QR CODE / SCANNER` : https://media.discordapp.net/attachments/1229096979611652228/1301588879052243048/IMG_20241031_221849.jpg?ex=6725069b&is=6723b51b&hm=660abfcdfcf5d1615afb8aa4b6fe5208bc8208d96239d9904077ffa65ba5df54&
+**[+]・ `LTC QR CODE / SCANNER` : https://media.discordapp.net/attachments/1229096979611652228/1301588878796394637/IMG_20241031_221912.jpg?ex=6725069b&is=6723b51b&hm=641e555be637183b163ee1e864f74b699f268a04e7d473f8233b035edf6cffe3&
+
+
+__**[+]・Created by - ROCKSTAR **__
+**●▬▬▬▬▬▬▬▬๑۩✰۩๑▬▬▬▬▬▬▬▬●**"""
+
 # GitSearch
 @ok.command()
 async def gitsearch(ctx, repository_name: str):
