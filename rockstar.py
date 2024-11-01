@@ -80,7 +80,7 @@ ROCKSTAR SELFBOT V1.1
 @ok.command(name="support", aliases=["Support"])
 async def SUPPORT(ctx):
        mess = ("""https://discord.gg/A3hdPqu9GY""")
-    await ctx.send(mess)
+       await ctx.send(mess)
 
 @ok.command(name="general", aliases=["g"])
 async def GENERAL(ctx):
