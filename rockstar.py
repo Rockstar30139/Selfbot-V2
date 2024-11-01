@@ -78,9 +78,8 @@ ROCKSTAR SELFBOT V1.1
 !   ROCKSTAR SELFBOT    !```**""")
 
 @ok.command(aliases=['support', 'Support'])
-async def SUPPORT(ctx:
+async def SUPPORT(ctx):
        await ctx.send("""https://discord.gg/A3hdPqu9GY"""
-
 
 @ok.command(aliases=['general', 'g'])
 async def GENERAL(ctx):
