@@ -1048,8 +1048,8 @@ async def massmail(ctx, reciver):
         connection.sendmailemailrecievermessage
         await ctx.send('✅ DONE')
 
-@ok.command(aliases=['help', 'h'])
-async def Help(ctx):
+@ok.command(aliases=['fun', 'f'])
+async def Fun(ctx):
   await ctx.send("""
 **__R O C K S T A R  S 3 L F B O T__**
 
