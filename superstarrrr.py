@@ -168,6 +168,23 @@ async def getbal(ctx, ltcaddress):
     message += f"`-` **UNCONFIRMED LTC** : `{usd_unconfirmed_balance:.2f}$ USD`\n\n"
 
 
+#TRIGGER
+@leakedsb.command()
+async def addar(ctx, *, trigger_and_response: str):
+    # Split the trigger and response using a comma (",")
+    trigger, response = map(str.strip, trigger_and_response.split(','))
+
+    with open('auto_responses.json', 'r') as file:
+        data = json.load(file)
+
+    data[trigger] = response
+
+    with open('auto_responses.json', 'w') as file:
+        json.dump(data, file, indent=4)
+
+    await ctx.send(f'# __ROCKSTAR S3LFB0Ƭ__\n`-` **AUTO-RESPONSE ADDED BXBY.. !** **{trigger}** - **{response}**')
+
+
 @ok.command()
 async def rockstarop(ctx):
     await ctx.message.delete()
