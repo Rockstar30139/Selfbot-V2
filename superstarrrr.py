@@ -1048,6 +1048,14 @@ async def massmail(ctx, reciver):
         connection.sendmailemailrecievermessage
         await ctx.send('✅ DONE')
 
+@ok.command(aliases=['help', 'h'])
+async def Help(ctx):
+  await ctx.send("""
+**__R O C K S T A R  S 3 L F B O T__**
+
+**                        Fun cmds**
+kiss,slap,tickle,feed,pat,smug,hug,cuddle,waifu,meme""")
+
 @ok.command(aliases=['purge, clear'])
 async def purge(ctx, times: int):
     channel = ctx.channel
