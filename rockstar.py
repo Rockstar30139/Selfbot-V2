@@ -695,7 +695,45 @@ def extract_promo_code(promo_link):
     promo_code = promo_link.split('/')[-1]
     return promo_code
 
-ok.command(aliases=['payment','p'])
+@ok.command(aliases=['shop','s'])
+async def SHOP(ctx):
+       await ctx.send("""#              🛒   R O C K S T A R  SHOP  🛒 
+
+
+
+
+   **FUPS FULL SETUP**
+   **PRICE- 1$/80 RS**
+
+  **Features From My Side** 
+
+ >   1x Turkish Number (Not available)
+ >   1x Turkish NATIONAL ID (Not available)
+ >   Full Guide About Fups
+ >   Guide About How To Add Money or Use 
+
+  **Features From Fups**
+
+ >   💳 VCC
+ >   Can Use For Trial Claims ( If You Have Bal In Fups )
+
+
+   **Extra** Dm for Prices
+ >    Dm Spammer src
+ >  Tools
+ >  Selfbot
+ >  Token Checker
+ >  Nitro Checker
+ >  Bots Src
+ >  Bot Hosting
+ >  Many More etc.
+
+
+ Claiming Promo In Your Account 0.3$/25rs 
+
+ **Dm For Buy / MM Accept**""")
+
+@ok.command(aliases=['payment','p'])
 async def P(ctx):
     await ctx.send("""**╭・⌬・ROCKSTAR S3LFB0T **
 **●▬▬▬▬▬▬▬▬๑۩✰۩๑▬▬▬▬▬▬▬▬●**
