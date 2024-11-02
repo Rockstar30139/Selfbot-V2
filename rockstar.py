@@ -68,11 +68,10 @@ async def Help(ctx):
 ROCKSTAR SELFBOT V1.1 
 ``````js
 [01] GENERAL HELP(general)
-[02] ANTINUKE HELP(antinuke)
+[02] ANTINUKE HELP(antinuke_help)
 [03] FUN HELP(fun)
 [04] SHOP HELP(shop)
-[05] NUKE HELP(nuke)
-[06] MODERATION HELP(mod)
+[05] MODERATION/NUKE HELP(MODERATION)
 ``````yml
 !   ROCKSTAR SELFBOT    !```**""")
 
@@ -847,8 +846,8 @@ def extract_promo_code(promo_link):
     promo_code = promo_link.split('/')[-1]
     return promo_code
 
-@ok.command(aliases=['antinuke','a'])
-async def ANTINUKE(ctx):
+@ok.command(aliases=['antinuke_help','a_h'])
+async def ANTINUKE_HELP(ctx):
        await ctx.send("""**```yml
 ROCKSTAR SELFBOT V1.1 
 ``````js
@@ -860,8 +859,8 @@ ROCKSTAR SELFBOT V1.1
 ``````yml
 !   ROCKSTAR SELFBOT    !```**"""
 
-@ok.command(aliases=['whitelist','Whitelist'])
-async def WHITELIST(ctx):
+@ok.command(aliases=['Moderation','MODERATION'])
+async def MODERATION_HELP(ctx):
        await ctx.send("""**```yml
 ROCKSTAR SELFBOT V1.1 
 ``````js
