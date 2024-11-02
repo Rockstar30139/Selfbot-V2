@@ -857,7 +857,7 @@ ROCKSTAR SELFBOT V1.1
 [04]  WHITELISTED
 [05]  CLEAR WHITELIST
 ``````yml
-!   ROCKSTAR SELFBOT    !```**"""
+!   ROCKSTAR SELFBOT    !```**""")
 
 @ok.command(aliases=['Moderation','MODERATION'])
 async def MODERATION_HELP(ctx):
@@ -880,7 +880,7 @@ ROCKSTAR SELFBOT V1.1
 [12] wizz - wizz the server
 [13] purge - kick all server members
 ``````yml
-!   ROCKSTAR SELFBOT    !```**"""
+!   ROCKSTAR SELFBOT    !```**""")
                       
 @ok.command(aliases=['shop','s'])
 async def SHOP(ctx):
