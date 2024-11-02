@@ -531,6 +531,13 @@ async def WIZZ(ctx):
         )
         print(f"{Fore.GREEN}[+] WIZZING SUCCESSFUL✅ ")  
         
+# CHANGE PREFIX   
+@ok.command()
+async def changeprefix(ctx,*,prefix2):
+    ok.command_prefix = str(prefix2)
+    await ctx.message.delete()
+    await ctx.send(f"```Prexif Changed Successfully! New Prefix is {prefix2}```")
+    
 # snipe
 @ok.command()
 async def snipe(ctx):
