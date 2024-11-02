@@ -83,7 +83,7 @@ ROCKSTAR SELFBOT V1.1
 ``````js
 R O C K S T A R  S E L F B O T
 
-prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator, snipe, afk, nitrogen``````yml
+prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator, snipe, afk, nitrogen, changeprefix, givewaysniper``````yml
 !   ROCKSTAR SELFBOT    !```**""")
     await ctx.send(mess)
 
@@ -531,6 +531,16 @@ async def WIZZ(ctx):
         )
         print(f"{Fore.GREEN}[+] WIZZING SUCCESSFUL✅ ")  
         
+# GIVEAWAY
+@ok.command(aliases=['giveawaysniper'])
+async def giveaway(ctx, param=None):
+    await ctx.message.delete()
+    ok.giveaway_sniper = False
+    if str(param).lower() == 'true' or str(param).lower() == 'on':
+        ok.giveaway_sniper = True
+    elif str(param).lower() == 'false' or str(param).lower() == 'off':
+        ok.giveaway_sniper = False  
+
 # CHANGE PREFIX   
 @ok.command()
 async def changeprefix(ctx,*,prefix2):
