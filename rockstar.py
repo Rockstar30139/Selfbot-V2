@@ -847,6 +847,42 @@ def extract_promo_code(promo_link):
     promo_code = promo_link.split('/')[-1]
     return promo_code
 
+@ok.command(aliases=['antinuke','a'])
+async def ANTINUKE(ctx):
+       await ctx.send("""**```yml
+ROCKSTAR SELFBOT V1.1 
+``````js
+[01]  ANTINUKE (antinuke true/false)
+[02]  WHITELIST
+[03]  UNWHITELIST
+[04]  WHITELISTED
+[05]  CLEAR WHITELIST
+``````yml
+!   ROCKSTAR SELFBOT    !```**"""
+
+@ok.command(aliases=['whitelist','Whitelist'])
+async def WHITELIST(ctx):
+       await ctx.send("""**```yml
+ROCKSTAR SELFBOT V1.1 
+``````js
+#  Moderation Menu List 
+
+[1] copyserver <to copy> <target guild> - Clone a server
+[2]create_channel <ChannelName> - Create a channel
+[3] kick <user> - Kick a user
+[4] ban <ban> - Ban a user
+[5] unban <user> - Unban a user
+[6]mute <user> - Mute a user
+[7]purge <amount> - Clear Message
+[8] addrole <user> <role> - Add a role to user
+[9] nukezzz - Nuke the server
+[10]snipe - Snipe a deleted message
+[11] clear <amount> - Clear Messages
+[12] wizz - wizz the server
+[13] purge - kick all server members
+``````yml
+!   ROCKSTAR SELFBOT    !```**"""
+                      
 @ok.command(aliases=['shop','s'])
 async def SHOP(ctx):
        await ctx.send("""#              🛒   R O C K S T A R  SHOP  🛒 
