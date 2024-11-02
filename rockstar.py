@@ -839,6 +839,107 @@ async def gituser(ctx, username: str):
     else:
         await ctx.send("Failed to fetch user information.")
 
+#Enable or disable the anti raid option
+@ok.command(aliases=['ar', 'antiraid'])
+async def antinuke(ctx, antiraidparameter=None):
+    await ctx.message.delete()
+    unknown.antiraid = False
+    if str(antiraidparameter).lower() == 'true' or str(
+            antiraidparameter).lower() == 'on':
+        unknown.antiraid = True
+        await ctx.send('- `ANTI-NUKE ENABLED...`')
+    elif str(antiraidparameter).lower() == 'false' or str(
+            antiraidparameter).lower() == 'off':
+        unknown.antiraid = False
+        await ctx.send('- `ANTINUKE DISABLED...`')
+    else:
+        await ctx.send(
+            f'- **[! ERROR] ** `USAGE : {ok.command_prefix}antiraid [true/false]`'
+        )
+           
+#WWHITE CMD=======================================================================================================================================================================================================
+#ADDTION WHITELIST
+@ok.command(aliases=['wl'])
+async def whitelist(ctx, user: discord.Member = None):
+    await ctx.message.delete()
+    if user is None:
+        await ctx.send(
+            f'[ERROR]: USAGE :  {ok.command_prefix}whitelist <user>')
+    else:
+        if ctx.guild.id not in ok.whitelisted_users.keys():
+            ok.whitelisted_users[ctx.guild.id] = {}
+        if user.id in ok.whitelisted_users[ctx.guild.id]:
+            await ctx.send("- `" + user.name.replace("*", "\*").replace(
+                "`", "\`").replace("_", "\_") + "#" + user.discriminator +
+                           "** ALREADY WHITELISTED [!]`")
+        else:
+            ok.whitelisted_users[ctx.guild.id][user.id] = 0
+            await ctx.send("- `WHITELISTED... " + user.name.replace(
+                "*", "\*").replace("`", "\`").replace("_", "\_") + "#" +
+                           user.discriminator + "`")
+               
+#CHECK WHITELIST
+@ok.command(aliases=['showwl'])
+async def whitelisted(ctx, g=None):
+    await ctx.message.delete()
+    if g == '-g' or g == '-global':
+        whitelist = '- `ALL WHITELISTED USERS:`\n'
+        for key in ok.whitelisted_users:
+            for key2 in ok.whitelisted_users[key]:
+                user = ok.get_user(key2)
+                whitelist += f'• {user.mention} ({user.id}) IN {ok.get_guild(key).name}\n'
+        await ctx.send(whitelist)
+    else:
+        whitelist = f'- `WHITELISTED USERS IN {ctx.guild.name}:`\n'
+        for key in ok.whitelisted_users:
+            if key == ctx.guild.id:
+                for key2 in ok.whitelisted_users[ctx.guild.id]:
+                    user = ok.get_user(key2)
+                    whitelist += f'• {user.mention} ({user.id})\n'
+
+    await ctx.send(whitelist)
+
+#REMOVE FROM WHITELIST
+@ok.command(aliases=['removewl'])
+async def unwhitelist(ctx, user: discord.Member = None):
+    if user is None:
+        await ctx.send(
+            "- `[ERROR]: SPECIFY TH USER YOU WOULD LIKE TO UNWHITELIST !`")
+    else:
+        if ctx.guild.id not in ok.whitelisted_users.keys():
+            await ctx.send("- `" + user.name.replace("*", "\*").replace(
+                "`", "\`").replace("_", "\_") + "#" + user.discriminator +
+                           " IS NOT WHITELISTED`")
+            return
+        if user.id in ok.whitelisted_users[ctx.guild.id]:
+            ok.whitelisted_users[ctx.guild.id].pop(user.id, 0)
+            user2 = ok.get_user(user.id)
+            await ctx.send('- `SUCCESSFULLY UNWHITELISTED' +
+                           user2.name.replace('*', "\*").replace(
+                               '`', "\`").replace('_', "\_") + '#' +
+                           user2.discriminator + '`')
+
+
+#WHITELIST CLEAR
+@ok.command(aliases=['clearwl', 'clearwld'])
+async def clearwhitelist(ctx):
+    await ctx.message.delete()
+    ok.whitelisted_users.clear()
+    await ctx.send('- `SUCCESFULLY CLEARED WHITELIST')
+
+@ok.command()
+async def category_responder(ctx):
+    global command_status
+    server_id = SERVER_ID
+
+    if server_id not in command_status:
+        command_status[server_id] = False
+
+    command_status[server_id] = not command_status[server_id]
+    await ctx.send(
+        f'- `CATEGORY RESPONDER IS :  {"ENABLED" if command_status[server_id] else "DISABLED"}`'
+    )
+
 # first message
 @ok.command(
     name='first-message', aliases=['firstmsg', 'fm', 'firstmessage'])
