@@ -1054,14 +1054,14 @@ async def gituser(ctx, username: str):
 @ok.command(aliases=['ar', 'antiraid'])
 async def antinuke(ctx, antiraidparameter=None):
     await ctx.message.delete()
-    unknown.antiraid = False
+    ok.antiraid = False
     if str(antiraidparameter).lower() == 'true' or str(
             antiraidparameter).lower() == 'on':
-        unknown.antiraid = True
+        ok.antiraid = True
         await ctx.send('- `ANTI-NUKE ENABLED...`')
     elif str(antiraidparameter).lower() == 'false' or str(
             antiraidparameter).lower() == 'off':
-        unknown.antiraid = False
+        ok.antiraid = False
         await ctx.send('- `ANTINUKE DISABLED...`')
     else:
         await ctx.send(
