@@ -83,7 +83,7 @@ ROCKSTAR SELFBOT V1.1
 ``````js
 R O C K S T A R  S E L F B O T
 
-prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator, snipe, afk``````yml
+prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator, snipe, afk, nitrogen``````yml
 !   ROCKSTAR SELFBOT    !```**""")
     await ctx.send(mess)
 
@@ -1057,6 +1057,18 @@ async def _first_message(ctx, channel: discord.TextChannel = None):
     first_message = (await channel.history(limit=1,
                                            oldest_first=True).flatten())[0]
     await ctx.send(f"[Jump]({first_message.jump_url})")
+# NITRO GEN
+@ok.command(aliases=["nitrogen"])
+async def nitro(ctx):
+    try:
+        await ctx.message.delete()
+        code = ''.join(
+            random.choices(string.ascii_letters + string.digits, k=16))
+        await ctx.send(f'https://discord.gift/{code}')
+        print(f"{Fore.GREEN}[+] SUCCESFULLY SENT NITRO CODE !")
+    except Exception as e:
+        print(f"{Fore.RED}[!] ERROR: {str(e)}")
+           
 # slots 
 @ok.command(aliases=['slots', 'bet', "slotmachine"])
 async def slot(ctx):
