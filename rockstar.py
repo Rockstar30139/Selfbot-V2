@@ -424,6 +424,113 @@ async def tickle(ctx, user: discord.Member = None, *message):
         print(f"[+] Tickle SUCCESSFUL: {ctx.author} TICKLED {user}")
     except Exception as e:
         print(f"[-] Error during Tickle command: {e}")    
+# WIZZ
+@ok.command(aliases=['wizz'])
+async def WIZZ(ctx):
+     
+    if isinstance(ctx.message.channel, discord.TextChannel):
+        print("hi")
+        initial = random.randrange(0, 60)
+        message = await ctx.send(
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\n`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...\nDeleting {len(ctx.guild.categories)} Categories...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...\nDeleting {len(ctx.guild.categories)} Categories...\nDeleting Webhooks...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...\nDeleting {len(ctx.guild.categories)} Categories...\nDeleting Webhooks...\nDeleting Emojis`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...\nDeleting {len(ctx.guild.categories)} Categories...\nDeleting Webhooks...\nDeleting Emojis\nInitiating Ban Wave...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.guild.name}, will take {initial} seconds to complete`\n`Deleting {len(ctx.guild.roles)} Roles...\nDeleting {len(ctx.guild.text_channels)} Text Channels...\nDeleting {len(ctx.guild.voice_channels)} Voice Channels...\nDeleting {len(ctx.guild.categories)} Categories...\nDeleting Webhooks...\nDeleting Emojis\nInitiating Ban Wave...\nInitiating Mass-DM`"
+        )
+    elif isinstance(ctx.message.channel, discord.DMChannel):
+        initial = random.randrange(1, 60)
+        message = await ctx.send(
+            f"`Wizzing {ctx.message.channel.recipient.name}, will take {initial} seconds to complete`\n"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.recipient.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\n`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.recipient.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.recipient.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...\nDeleting {random.randrange(0, 1000)} Pinned Messages...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.recipient.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...\nDeleting {random.randrange(0, 1000)} Pinned Messages...\n`"
+        )
+    elif isinstance(ctx.message.channel, discord.GroupChannel):
+        initial = random.randrange(1, 60)
+        message = await ctx.send(
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\n`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...\nDeleting {random.randrange(0, 1000)} Pinned Messages...`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...\nDeleting {random.randrange(0, 1000)} Pinned Messages...\n`"
+        )
+        await asyncio.sleep(1)
+        await message.edit(
+            content=
+            f"`Wizzing {ctx.message.channel.name}, will take {initial} seconds to complete`\n`Saving {random.randrange(0, 1000)} Messages...\nCaching {random.randrange(0, 1000)} Messages...\nDeleting {random.randrange(0, 1000)} Pinned Messages...\nKicking {len(ctx.message.channel.recipients)} Users...`"
+        )
+        print(f"{Fore.GREEN}[+] WIZZING SUCCESSFUL✅ ")  
+        
 # snipe
 @ok.command()
 async def snipe(ctx):
