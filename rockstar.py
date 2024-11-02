@@ -83,7 +83,7 @@ ROCKSTAR SELFBOT V1.1
 ``````js
 R O C K S T A R  S E L F B O T
 
-prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator``````yml
+prune, mc, ban, kick, mute, ping, calc, asci, mujra, dmall, leave, getbal, purge, avatar, define, boosts, massmail, connectvc, ltcprice, gayrate, loverate, userinfo, copyserver, change_hypesquad, serverinfo, spam, status, stopstatus, rockstarop, hack2, cum, fm (first message), slots, autobuy, gituser, gitsearch, checkpromo (promo link), i2c, minesweeper, uptime, _100, leaveall (Leave all guilds), guildsid, randomip, leaveguild (Leaves a single guild), abuse, c2i, link, addar or lister or removear, setrotator or stoprotator, snipe``````yml
 !   ROCKSTAR SELFBOT    !```**""")
     await ctx.send(mess)
 
@@ -424,6 +424,17 @@ async def tickle(ctx, user: discord.Member = None, *message):
         print(f"[+] Tickle SUCCESSFUL: {ctx.author} TICKLED {user}")
     except Exception as e:
         print(f"[-] Error during Tickle command: {e}")    
+# snipe
+@ok.command()
+async def snipe(ctx):
+    await ctx.message.delete()
+    currentChannel = ctx.channel.id
+    if currentChannel in unknown.sniped_message_dict:
+        await ctx.send(unknown.sniped_message_dict[currentChannel])
+    else:
+        await ctx.send("No message to snipe!", delete_after=3)
+
+
 # Nsfw
 @ok.command(aliases=['fuck', 'fx', '18+', 'xxx', 'nsfw'])
 async def waifu(ctx):
